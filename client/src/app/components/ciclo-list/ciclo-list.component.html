@@ -1,0 +1,18 @@
+<div class="col-md-4" *ngFor="let ciclo of ciclos">
+  <div class="card text-center mb-2">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      {{ciclo.nombre}}
+      <div>
+      <button class="btn btn-danger float-right" (click)="deleteCiclo(ciclo.id_ciclo)">
+        <i class="fa fa-trash-alt"></i>
+      </button>
+      <a [routerLink]  = "['/ciclos/edit', ciclo.id_ciclo]" class="btn btn-info mr-2">
+        <i class="fa fa-pen-square"></i>
+      </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>{{ciclo.descripcion}}</p>
+    </div>
+  </div>
+</div>

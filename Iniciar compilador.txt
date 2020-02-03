@@ -1,0 +1,3 @@
+Dentro de la carpeta server:
+npm run build
+npm run dev
