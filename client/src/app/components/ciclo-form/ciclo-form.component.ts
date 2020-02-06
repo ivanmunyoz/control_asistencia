@@ -24,10 +24,12 @@ export class CicloFormComponent implements OnInit {
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
-    if(params.id_ciclo){
-      this.ciclosServices.getCiclo(params.id_ciclo)
+    console.log(params);
+    if(params.id){
+      this.ciclosServices.getCiclo(params.id)
       .subscribe(
         res => {
+          console.log(res)
           this.ciclo = res;
           this.edit = true;
         },
@@ -52,10 +54,12 @@ export class CicloFormComponent implements OnInit {
   }
 
   updateCiclo(){
+
     this.ciclosServices.updateCiclo(this.ciclo.id_ciclo, this.ciclo)
     .subscribe(
       res => {
-        console.log(res);                                                                                                                                                                                     
+        console.log(res);
+        this.router.navigate(['/ciclos']);
       },
       err => console.error(err)
     )

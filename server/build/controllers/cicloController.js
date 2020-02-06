@@ -22,9 +22,10 @@ class CicloController {
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
+            const id = req.params.id;
             const ciclos = yield database_1.default.query('SELECT * FROM ciclos WHERE id_ciclo= ?', [id]);
-            if (ciclos.lenght > 0) {
+            console.log(ciclos);
+            if (ciclos.length > 0) {
                 return res.json(ciclos[0]);
             }
             res.status(404).json({ text: 'No se ha encontrado el ciclo solicitado' });
@@ -38,14 +39,14 @@ class CicloController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
+            const id = req.params.id;
             yield database_1.default.query('UPDATE ciclos set ? WHERE id_ciclo= ?', [req.body, id]);
             res.json({ message: 'Ciclo actualizado' });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
+            const id = req.params.id;
             yield database_1.default.query('DELETE FROM ciclos WHERE id_ciclo= ?', [id]);
             res.json({ message: 'Se ha borrado el ciclo' });
         });

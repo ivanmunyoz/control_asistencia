@@ -35,7 +35,8 @@ export class CiclosService {
   }
 
   updateCiclo(id: string|number, updatedCiclo: Ciclo): Observable<Ciclo>{
-    return this.http.put('${this.API_URI}/ciclos/${id}', updatedCiclo);
+    var command = this.API_URI + '/ciclos/' + id;
+    return this.http.put(command, updatedCiclo);
   }
 
 }

@@ -12,7 +12,6 @@ class CiclosRoutes {
         this.router.get('/:id', cicloController_1.cicloController.getOne);
         this.router.post('/', cicloController_1.cicloController.create);
         this.router.delete('/:id', cicloController_1.cicloController.delete);
-        this.router.delete('/:id', cicloController_1.cicloController.delete);
         this.router.put('/:id', cicloController_1.cicloController.update);
     }
 }
