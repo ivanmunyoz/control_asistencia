@@ -36,8 +36,4 @@ export class CicloListComponent implements OnInit {
     )
   }
 
-  editCiclo(id_ciclo: string){
-    
-  }
-
 }

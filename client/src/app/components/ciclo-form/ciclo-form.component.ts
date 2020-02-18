@@ -54,7 +54,6 @@ export class CicloFormComponent implements OnInit {
   }
 
   updateCiclo(){
-
     this.ciclosServices.updateCiclo(this.ciclo.id_ciclo, this.ciclo)
     .subscribe(
       res => {
@@ -64,5 +63,4 @@ export class CicloFormComponent implements OnInit {
       err => console.error(err)
     )
   }
-
 }

@@ -4,7 +4,7 @@ import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
 import ciclosRoutes from './routes/ciclosRoutes';
-// import modulosRoutes from './routes/modulosRoutes';
+import modulosRoutes from './routes/modulosRoutes';
 
 class Server{
 
@@ -27,7 +27,7 @@ class Server{
     routes(): void{
         this.app.use('/',indexRoutes);
         this.app.use('/ciclos',ciclosRoutes);
-        // this.app.use('/modulos',modulosRoutes);
+        this.app.use('/',modulosRoutes);
     }
 
     start(): void{

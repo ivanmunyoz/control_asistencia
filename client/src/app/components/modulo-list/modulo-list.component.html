@@ -1,0 +1,19 @@
+<div class="col-md-4" *ngFor="let modulo of modulos">
+  <div class="card text-center mb-2">
+    <div class="card-header bg-light text-black d-flex justify-content-between align-items-center">
+      {{modulo.nombre}}
+      <div>
+      <button class="btn btn-danger float-right" (click)="deleteModulo(modulo.id_ciclo, modulo.id_modulo)">
+        <i class="fa fa-trash-alt"></i>
+      </button>
+      <!-- <a class="btn btn-success mr-2" (click)="editModulo(modulo.id_ciclo, modulo.id_modulo)">
+        <i class="fa fa-pen-square"></i>
+      </a> -->
+      </div>
+    </div>
+    <div class="card-body">
+      <p>{{modulo.descripcion}}</p>
+      <p>{{modulo.horas_totales}}</p>
+    </div>
+  </div>
+</div>

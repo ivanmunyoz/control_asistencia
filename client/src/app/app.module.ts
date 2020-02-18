@@ -8,15 +8,21 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { CicloFormComponent } from './components/ciclo-form/ciclo-form.component';
 import { CicloListComponent } from './components/ciclo-list/ciclo-list.component';
+import { ModuloListComponent } from './components/modulo-list/modulo-list.component';
+import { ModuloFormComponent } from './components/modulo-form/modulo-form.component';
 
 import { CiclosService } from './services/ciclos.service';
+import { ModulosService } from './services/modulos.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     CicloFormComponent,
-    CicloListComponent
+    CicloListComponent,
+    ModuloListComponent,
+    ModuloFormComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +32,7 @@ import { CiclosService } from './services/ciclos.service';
   ],
   providers: [
     CiclosService,
+    ModulosService,
   ],
   bootstrap: [AppComponent]
 })
