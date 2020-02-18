@@ -26,18 +26,15 @@ export class ModuloFormComponent implements OnInit {
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
-    //console.log(params);
     if(params.id && params.id_mod){
       this.modulosService.getModulo(params.id, params.id_mod)
       .subscribe(
         res => {
-          //console.log(res)
           this.modulo = res;
           this.edit = true;
         },
         err => console.error(err)
       )
-
     }
   }
 
@@ -54,7 +51,6 @@ export class ModuloFormComponent implements OnInit {
       err => console.error(err)
     );
   }
-
 
   editModulo(id_cic: string, id_modulo: string){
     this.modulosService.updateModulo(id_cic, id_modulo, this.modulo)

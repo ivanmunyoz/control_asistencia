@@ -37,5 +37,4 @@ export class ModuloListComponent implements OnInit {
       err => console.error(err)
     )
   }
-
 }
