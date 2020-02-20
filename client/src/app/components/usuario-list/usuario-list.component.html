@@ -1,0 +1,20 @@
+<div class="col-md-4" *ngFor="let usr of usuarios">
+  <div class="card text-center mb-2">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      <p>Nombre: {{usr.nombre}}</p>
+      <div>
+      <button class="btn btn-danger float-right" (click)="deleteUsuario(usr.id_usuario)">
+        <i class="fa fa-trash-alt"></i>
+      </button>
+      <a [routerLink]  = "['/usuarios/edit', usr.id_usuario]" class="btn btn-info mr-2">
+        <i class="fa fa-pen-square"></i>
+      </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Primer Apellido: {{usr.primer_apellido}}</p>
+      <p>Segundo Apellido: {{usr.segundo_apellido}}</p>
+      <p>Dni: {{usr.dni}}</p>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,11 @@ import { ModuloFormComponent } from './components/modulo-form/modulo-form.compon
 
 import { CiclosService } from './services/ciclos.service';
 import { ModulosService } from './services/modulos.service';
+import { CalendarioFormComponent } from './components/calendario-form/calendario-form.component';
+import { CalendarioListComponent } from './components/calendario-list/calendario-list.component';
+import { DatePipe } from '@angular/common';
+import { UsuarioListComponent } from './components/usuario-list/usuario-list.component';
+import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
 
 
 @NgModule({
@@ -22,7 +27,11 @@ import { ModulosService } from './services/modulos.service';
     CicloFormComponent,
     CicloListComponent,
     ModuloListComponent,
-    ModuloFormComponent
+    ModuloFormComponent,
+    CalendarioFormComponent,
+    CalendarioListComponent,
+    UsuarioListComponent,
+    UsuarioFormComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +42,7 @@ import { ModulosService } from './services/modulos.service';
   providers: [
     CiclosService,
     ModulosService,
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

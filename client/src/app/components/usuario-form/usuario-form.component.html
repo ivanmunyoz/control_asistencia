@@ -1,0 +1,29 @@
+<div class="col-md-8 border border-secondary rounded">
+  <form>
+    <div class="form-group mt-4">
+      <input type="text" name="nombre" [(ngModel)]="usuario.nombre" class="form-control" id="nombre" placeholder="Nombre del usuario" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="primer_apellido" [(ngModel)]="usuario.primer_apellido" class="form-control" id="primer_apellido" placeholder="Primer apellido del usuario" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="segundo_apellido" [(ngModel)]="usuario.segundo_apellido" class="form-control" id="segundo_apellido" placeholder="Segundo apellido del usuario" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="dni" [(ngModel)]="usuario.dni" class="form-control" id="dni" placeholder="DNI del usuario" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="email" [(ngModel)]="usuario.email" class="form-control" id="email" placeholder="E-mail del usuario" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="tipo" [(ngModel)]="usuario.tipo" class="form-control" id="tipo" placeholder="Tipo de usuario" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="usuario" [(ngModel)]="usuario.usuario" class="form-control" id="usuario" placeholder="Nombre de login del usuario" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="contrasena" [(ngModel)]="usuario.contrasena" class="form-control" id="contrasena" placeholder="Contraseña del usuario" required>
+    </div>
+    <button type="submit" class="btn btn-primary mb-4" (click)="edit ? updateUsuario() : saveNewUsuario()">Guardar</button>
+  </form>
+</div>

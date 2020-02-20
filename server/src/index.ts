@@ -5,6 +5,10 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import ciclosRoutes from './routes/ciclosRoutes';
 import modulosRoutes from './routes/modulosRoutes';
+import calendariosRoutes from './routes/calendariosRoutes';
+import usuariosRoutes from './routes/usuariosRoutes';
+
+
 
 class Server{
 
@@ -27,7 +31,10 @@ class Server{
     routes(): void{
         this.app.use('/',indexRoutes);
         this.app.use('/ciclos',ciclosRoutes);
+        this.app.use('/calendarios',calendariosRoutes);
         this.app.use('/',modulosRoutes);
+        this.app.use('/usuarios',usuariosRoutes);
+
     }
 
     start(): void{
