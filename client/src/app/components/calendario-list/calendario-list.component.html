@@ -1,0 +1,22 @@
+<div class="col-md-4" *ngFor="let cal of calendario">
+  <div class="card text-center mb-2">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      {{calendario.id_calendario}}
+      <div>
+      <button class="btn btn-danger float-right" (click)="deleteCalendario(cal.id_calendario)">
+        <i class="fa fa-trash-alt"></i>
+      </button>
+      <a [routerLink]  = "['/calendarios/edit', cal.id_calendario]" class="btn btn-info mr-2">
+        <i class="fa fa-pen-square"></i>
+      </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>{{cal.fecha_inicio}} - {{cal.fecha_fin}}</p>
+      <br>
+      <p>{{cal.hora_inicio_dia}} - {{cal.hora_fin_dia}}</p>
+    </div>
+  </div>
+</div>
+
+

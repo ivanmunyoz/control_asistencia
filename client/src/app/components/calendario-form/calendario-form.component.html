@@ -1,0 +1,17 @@
+<div class="col-md-8 border border-secondary rounded">
+  <form>
+    <div class="form-group mt-4">
+      <input type="date" name="fecha_inicio" [(ngModel)]="calendario.fecha_inicio" class="form-control" id="fecha_inicio" placeholder="Fecha de inicio del curso" required>
+    </div>
+    <div class="form-group">
+      <input type="date" name="fecha_fin" [(ngModel)]="calendario.fecha_fin" class="form-control" id="fecha_fin" placeholder="Fecha de fin del curso" required>
+    </div>
+    <div class="form-group">
+      <input type="datetime" name="hora_inicio_dia" [(ngModel)]="calendario.hora_inicio_dia" class="form-control" id="hora_inicio_dia" placeholder="Hora a la que empiezan cada dia las clases." required>
+    </div>
+    <div class="form-group">
+      <input type="datetime" name="hora_fin_dia" [(ngModel)]="calendario.hora_fin_dia" class="form-control" id="hora_fin_dia" placeholder="Hora a la que acaban cada dia las clases." required>
+    </div>
+    <button type="submit" class="btn btn-primary mb-4" (click)="edit ? updateCalendario() : saveNewCalendario()">Guardar</button>
+  </form>
+</div>
