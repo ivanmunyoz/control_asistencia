@@ -3,10 +3,13 @@
     <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
       <p>Nombre: {{usr.nombre}}</p>
       <div>
+      <button class="btn btn-info mr-2" [routerLink]  = "['/usuarios/perfil', usr.id_usuario]">
+        <i class="fa fa-user"></i>
+      </button>
       <button class="btn btn-danger float-right" (click)="deleteUsuario(usr.id_usuario)">
         <i class="fa fa-trash-alt"></i>
       </button>
-      <a [routerLink]  = "['/usuarios/edit', usr.id_usuario]" class="btn btn-info mr-2">
+      <a [routerLink]  = "['/usuarios/edit', usr.id_usuario]" class="btn btn-primary mr-2">
         <i class="fa fa-pen-square"></i>
       </a>
       </div>

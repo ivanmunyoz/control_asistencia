@@ -7,6 +7,8 @@ import ciclosRoutes from './routes/ciclosRoutes';
 import modulosRoutes from './routes/modulosRoutes';
 import calendariosRoutes from './routes/calendariosRoutes';
 import usuariosRoutes from './routes/usuariosRoutes';
+import clasesRoutes from './routes/clasesRoutes';
+import gruposRoutes from './routes/gruposRoutes';
 
 
 
@@ -34,6 +36,8 @@ class Server{
         this.app.use('/calendarios',calendariosRoutes);
         this.app.use('/',modulosRoutes);
         this.app.use('/usuarios',usuariosRoutes);
+        this.app.use('/clases',clasesRoutes);
+        this.app.use('/grupos',gruposRoutes);
 
     }
 
@@ -42,7 +46,6 @@ class Server{
             console.log("Servidor en el puerto", this.app.get('port'))
         });
     }
-
 }
 
 const server = new Server();

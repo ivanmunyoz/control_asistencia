@@ -18,6 +18,9 @@ import { CalendarioListComponent } from './components/calendario-list/calendario
 import { DatePipe } from '@angular/common';
 import { UsuarioListComponent } from './components/usuario-list/usuario-list.component';
 import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
+import { ClaseListComponent } from './components/clase-list/clase-list.component';
+import { ClaseFormComponent } from './components/clase-form/clase-form.component';
+import { UsuarioProfileComponent } from './components/usuario-profile/usuario-profile.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { UsuarioFormComponent } from './components/usuario-form/usuario-form.com
     CalendarioFormComponent,
     CalendarioListComponent,
     UsuarioListComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    ClaseListComponent,
+    ClaseFormComponent,
+    UsuarioProfileComponent
   ],
   imports: [
     BrowserModule,

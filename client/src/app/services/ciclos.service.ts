@@ -34,7 +34,7 @@ export class CiclosService {
     return this.http.delete(command);
   }
 
-  updateCiclo(id: string|number, updatedCiclo: Ciclo): Observable<Ciclo>{
+  updateCiclo(id: number, updatedCiclo: Ciclo): Observable<Ciclo>{
     const command = this.API_URI + '/ciclos/' + id;
     return this.http.put(command, updatedCiclo);
   }

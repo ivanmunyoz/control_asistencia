@@ -9,6 +9,11 @@ import { CalendarioListComponent } from './components/calendario-list/calendario
 import { CalendarioFormComponent } from './components/calendario-form/calendario-form.component';
 import { UsuarioListComponent } from './components/usuario-list/usuario-list.component';
 import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
+import { ClaseListComponent } from './components/clase-list/clase-list.component';
+import { ClaseFormComponent } from './components/clase-form/clase-form.component';
+import { UsuarioProfileComponent } from './components/usuario-profile/usuario-profile.component';
+// import { GrupoListComponent } from './components/grupo-list/grupo-list.component';
+// import { GrupoFormComponent } from './components/grupo-form/grupo-form.component';
 
 
 const routes: Routes = [
@@ -38,7 +43,7 @@ const routes: Routes = [
     component: ModuloFormComponent
   },
   {
-    path: 'ciclos/:id/modulos/:id_mod/edit',
+    path: 'ciclos/:id/modulos/edit/:id_mod',
     component: ModuloFormComponent
   },
   {
@@ -64,6 +69,22 @@ const routes: Routes = [
   {
     path: 'usuarios/edit/:id_usr',
     component: UsuarioFormComponent
+  },
+  {
+    path: 'usuarios/perfil/:id_usr',
+    component: UsuarioProfileComponent
+  },
+  {
+    path: 'clases',
+    component: ClaseListComponent,
+  },
+  {
+    path: 'clases/add',
+    component: ClaseFormComponent
+  },
+  {
+    path: 'clases/edit/:id_clas',
+    component: ClaseFormComponent
   },
 ];
 

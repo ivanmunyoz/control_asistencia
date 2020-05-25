@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-
 import { Calendario } from "../models/Calendario";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalendariosService {
 
+  private subject = new Subject<any>();
   API_URI = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }

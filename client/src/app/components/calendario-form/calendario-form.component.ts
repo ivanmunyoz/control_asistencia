@@ -27,7 +27,7 @@ export class CalendarioFormComponent implements OnInit {
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
-    console.log(params)
+    //console.log(params)
     if(params.id_cal){
       this.calendariosService.getCalendario(params.id_cal)
       .subscribe(

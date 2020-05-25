@@ -26,7 +26,7 @@ export class UsuarioFormComponent implements OnInit {
 
   edit: boolean = false;
 
-  constructor(private usuariosServices: UsuariosService, private router: Router, private activatedRoute: ActivatedRoute  ) { }
+  constructor(private usuariosServices: UsuariosService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;

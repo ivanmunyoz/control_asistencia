@@ -20,11 +20,10 @@ export class CicloFormComponent implements OnInit {
 
   edit: boolean = false;
 
-  constructor(private ciclosServices: CiclosService, private router: Router, private activatedRoute: ActivatedRoute  ) { }
+  constructor(private ciclosServices: CiclosService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
-    console.log(params);
     if(params.id){
       this.ciclosServices.getCiclo(params.id)
       .subscribe(

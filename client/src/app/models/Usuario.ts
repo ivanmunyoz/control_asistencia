@@ -1,4 +1,4 @@
-export interface Usuario {
+export class Usuario {
   id_usuario?: number;
   nombre?: string;
   primer_apellido?: string;

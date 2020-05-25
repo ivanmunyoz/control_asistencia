@@ -1,4 +1,4 @@
-export interface Modulo {
+export class Modulo {
   id_modulo?: number;
   id_ciclo?: number;
   nombre?: string;
