@@ -4,11 +4,9 @@
       <input type="text" name="nombre" [(ngModel)]="clase.nombre" class="form-control" id="nombre" placeholder="Nombre de la clase" required>
     </div>
     <div class="form-group">
-      <input type="number" name="id_cal" [(ngModel)]="clase.id_calendario" class="form-control" id="id_cal" placeholder="Id del calendario" required>
-      <!-- <select>
-        <option *nfFor="let cal of calendario">{{cal.fecha_inicio}} - {{cal.fecha_fin}}</option>
-        <option></option>
-      </select> -->
+      <select id="id_calendario" name="id_calendario" [(ngModel)]="clase.id_calendario">
+        <option value={{c.id_calendario}} *ngFor="let c of calendario">{{c.fecha_inicio}} - {{c.fecha_fin}}</option>
+      </select>
     </div>
     <div class="form-group">
       <input type="number" name="curso" [(ngModel)]="clase.curso" class="form-control" id="curso" placeholder="Curso de la clase" required>

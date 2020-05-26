@@ -15,6 +15,8 @@ class GruposRoutes{
         this.router.post('/', grupoController.create);
         this.router.delete('/:id_grp', grupoController.delete);
         this.router.put('/:id_grp', grupoController.update);
+        this.router.get('/usuario/:id_usr', grupoController.getGroupUser);
+        this.router.get('/clase/:id_clas', grupoController.getGroupClass);
     }
 
 }

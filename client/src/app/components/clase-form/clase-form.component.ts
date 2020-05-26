@@ -2,6 +2,8 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { ClasesService } from "../../services/clases.service";
 import { Clase } from "../../models/Clase";
 import { Router, ActivatedRoute } from "@angular/router";
+import { CalendariosService } from "../../services/calendarios.service";
+import { Calendario } from "../../models/Calendario";
 
 
 @Component({
@@ -19,17 +21,19 @@ export class ClaseFormComponent implements OnInit {
     nombre: "",
     curso: 1
   }
-
+  calendario;
   edit:boolean = false;
 
-  constructor(private clasesServices: ClasesService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private clasesServices: ClasesService, private calendariosServices: CalendariosService, private router: Router, private activatedRoute: ActivatedRoute) { }
+
   ngOnInit() {
+    const cal = this.getAllCalendarios();
+    this.calendario;
     const params = this.activatedRoute.snapshot.params;
     if(params.id_clas){
       this.clasesServices.getClase(params.id_clas)
       .subscribe(
         res => {
-          //console.log(res)
           this.clase = res;
           this.edit = true;
         },
@@ -54,6 +58,7 @@ export class ClaseFormComponent implements OnInit {
   }
 
   updateClase(){
+    console.log(this.clase.id_calendario);
     this.clasesServices.updateClase(this.clase.id_clase, this.clase)
     .subscribe(
       res => {
@@ -61,6 +66,16 @@ export class ClaseFormComponent implements OnInit {
       },
       err => console.error(err)
     )
+  }
+
+  getAllCalendarios(){
+    const prueba = this.calendariosServices.getCalendarios().subscribe(
+      res=>{
+        this.calendario = res;
+      },
+      err => console.error(err)
+    )
+
   }
 
 }
