@@ -20,13 +20,12 @@ export class GruposService {
 
   getGrupo(id_grp: string){
     const command = this.API_URI + '/grupos/'+ id_grp;
-    //console.log(command);
     return this.http.get(command);
   }
 
-  saveGrupo(ciclo: Grupo){
+  saveGrupo(grupo: Grupo){
     const command = this.API_URI + '/grupos';
-    return this.http.post(command, ciclo);
+    return this.http.post(command, grupo);
   }
 
   deleteGrupo(id_grp: string){

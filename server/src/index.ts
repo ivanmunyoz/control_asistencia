@@ -9,8 +9,7 @@ import calendariosRoutes from './routes/calendariosRoutes';
 import usuariosRoutes from './routes/usuariosRoutes';
 import clasesRoutes from './routes/clasesRoutes';
 import gruposRoutes from './routes/gruposRoutes';
-
-
+import asistenciasRoutes from './routes/asistenciasRoutes';
 
 class Server{
 
@@ -38,7 +37,7 @@ class Server{
         this.app.use('/usuarios',usuariosRoutes);
         this.app.use('/clases',clasesRoutes);
         this.app.use('/grupos',gruposRoutes);
-
+        this.app.use('/asistencias', asistenciasRoutes);
     }
 
     start(): void{

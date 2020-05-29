@@ -1,0 +1,25 @@
+<div class="col-md-4" *ngFor="let asis of asistencia">
+  <div class="card text-center mb-2">
+
+    <div class="card-header text-white d-flex justify-content-between align-items-center" [ngClass]="{'bg-success': asis.justificada, 'bg-danger': !asis.justificada}">
+      <div *ngFor="let c of clase">
+        <div *ngIf="c.id_clase == asis.id_clase">{{c.nombre}}</div>
+      </div>
+    <div>
+      <button [ngClass]="{'border': !asis.justificada, '': asis.justificada}" class="btn btn-danger float-right" (click)="deleteAsistencia(asis.id_asistencia)">
+        <i class="fa fa-trash-alt"></i>
+      </button>
+      <a [routerLink]  = "['/asistencias/edit', asis.id_asistencia]" class="btn btn-info mr-2">
+        <i class="fa fa-pen-square"></i>
+      </a>
+    </div>
+  </div>
+    <div class="card-body">
+        <div *ngFor="let u of usuario">
+          <p *ngIf="u.id_usuario == asis.id_alumno">{{u.nombre}} {{u.primer_apellido}}</p>
+        </div>
+      <br>
+      <p></p>
+    </div>
+  </div>
+</div>

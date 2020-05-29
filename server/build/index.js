@@ -13,6 +13,7 @@ const calendariosRoutes_1 = __importDefault(require("./routes/calendariosRoutes"
 const usuariosRoutes_1 = __importDefault(require("./routes/usuariosRoutes"));
 const clasesRoutes_1 = __importDefault(require("./routes/clasesRoutes"));
 const gruposRoutes_1 = __importDefault(require("./routes/gruposRoutes"));
+const asistenciasRoutes_1 = __importDefault(require("./routes/asistenciasRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -34,6 +35,7 @@ class Server {
         this.app.use('/usuarios', usuariosRoutes_1.default);
         this.app.use('/clases', clasesRoutes_1.default);
         this.app.use('/grupos', gruposRoutes_1.default);
+        this.app.use('/asistencias', asistenciasRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

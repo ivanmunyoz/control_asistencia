@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="container form-group w-25">
+    <form>
+      <select [(ngModel)]='grupo.id_usuario' name="id_usuario" id="id_usuario" class="form-control">
+        <option *ngFor="let u of usuario"  value="{{u.id_usuario}}">{{u.nombre}} {{u.primer_apellido}}</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary mb-4 mt-2" (click)="saveNewGrupo()">Guardar</button>
+    </form>
+  </div>
+</div>
+
+

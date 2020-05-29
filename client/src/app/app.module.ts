@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,10 @@ import { UsuarioFormComponent } from './components/usuario-form/usuario-form.com
 import { ClaseListComponent } from './components/clase-list/clase-list.component';
 import { ClaseFormComponent } from './components/clase-form/clase-form.component';
 import { UsuarioProfileComponent } from './components/usuario-profile/usuario-profile.component';
+import { AsistenciaListComponent } from './components/asistencia-list/asistencia-list.component';
+import { AsistenciaFormComponent } from './components/asistencia-form/asistencia-form.component';
+import { GrupoClaseComponent } from './components/grupo-clase/grupo-clase.component';
+import { ClaseShowComponent } from './components/clase-show/clase-show.component';
 
 
 @NgModule({
@@ -37,13 +41,18 @@ import { UsuarioProfileComponent } from './components/usuario-profile/usuario-pr
     UsuarioFormComponent,
     ClaseListComponent,
     ClaseFormComponent,
-    UsuarioProfileComponent
+    UsuarioProfileComponent,
+    AsistenciaListComponent,
+    AsistenciaFormComponent,
+    GrupoClaseComponent,
+    ClaseShowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CiclosService,

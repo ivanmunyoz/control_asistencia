@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Calendario } from "../../models/Calendario";
 import { CalendariosService } from "../../services/calendarios.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { formatDate, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-calendario-form',
@@ -27,7 +27,6 @@ export class CalendarioFormComponent implements OnInit {
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
-    //console.log(params)
     if(params.id_cal){
       this.calendariosService.getCalendario(params.id_cal)
       .subscribe(
@@ -39,8 +38,7 @@ export class CalendarioFormComponent implements OnInit {
           this.edit = true;
         },
         err => console.error(err)
-      )
-
+      );
     }
   }
 

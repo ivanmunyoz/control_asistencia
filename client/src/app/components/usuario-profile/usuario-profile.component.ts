@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from "../../models/Usuario";
 import { UsuariosService } from "../../services/usuarios.service";
 import { Router, ActivatedRoute } from "@angular/router";
+import { AsistenciasService } from "../../services/asistencias.service";
+import { ClasesService } from "../../services/clases.service";
+
 
 @Component({
   selector: 'app-usuario-profile',
@@ -10,7 +13,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class UsuarioProfileComponent implements OnInit {
 
-  constructor(private usuariosServices: UsuariosService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private clasesService: ClasesService, private asistenciasService: AsistenciasService, private usuariosServices: UsuariosService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   usuario: Usuario = {
     id_usuario: 0,
@@ -24,10 +27,16 @@ export class UsuarioProfileComponent implements OnInit {
     contrasena: ""
   }
 
-  ngOnInit() {
+  clase;
+  asistencia;
 
+  ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
     if(params.id_usr){
+      this.getAllClases();
+      this.clase;
+      this.getAllAsistencias();
+      this.asistencia;
       this.usuariosServices.getUsuario(params.id_usr)
       .subscribe(
         res => {
@@ -37,6 +46,22 @@ export class UsuarioProfileComponent implements OnInit {
       )
 
     }
+  }
+
+  getAllAsistencias(){
+    this.asistenciasService.getAsistencias().subscribe(
+      res => {
+        this.asistencia = res;
+      }
+    );
+  }
+
+  getAllClases(){
+    this.clasesService.getClases().subscribe(
+      res => {
+        this.clase = res;
+      }
+    );
   }
 
 }

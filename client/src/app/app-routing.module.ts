@@ -12,8 +12,10 @@ import { UsuarioFormComponent } from './components/usuario-form/usuario-form.com
 import { ClaseListComponent } from './components/clase-list/clase-list.component';
 import { ClaseFormComponent } from './components/clase-form/clase-form.component';
 import { UsuarioProfileComponent } from './components/usuario-profile/usuario-profile.component';
-// import { GrupoListComponent } from './components/grupo-list/grupo-list.component';
-// import { GrupoFormComponent } from './components/grupo-form/grupo-form.component';
+import { AsistenciaListComponent } from './components/asistencia-list/asistencia-list.component';
+import { AsistenciaFormComponent } from './components/asistencia-form/asistencia-form.component';
+import { GrupoClaseComponent } from './components/grupo-clase/grupo-clase.component';
+import { ClaseShowComponent } from "./components/clase-show/clase-show.component";
 
 
 const routes: Routes = [
@@ -86,6 +88,26 @@ const routes: Routes = [
     path: 'clases/edit/:id_clas',
     component: ClaseFormComponent
   },
+  {
+    path: 'asistencias',
+    component: AsistenciaListComponent,
+  },
+  {
+    path: 'asistencias/add',
+    component: AsistenciaFormComponent
+  },
+  {
+    path: 'asistencias/edit/:id_asis',
+    component: AsistenciaFormComponent
+  },
+  {
+    path: 'clases/:id_clas/adduser',
+    component: GrupoClaseComponent
+  },
+  {
+    path: 'clases/:id_clas/show',
+    component: ClaseShowComponent
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="container">
+    <p>Clase: {{clase.nombre}}</p>
+    <div class="container" *ngFor="let c of calendario">
+      <div *ngIf="clase.id_calendario == c.id_calendario">Fecha de inicio: {{c.fecha_inicio}}
+      <br>Fecha final: {{c.fecha_fin}}
+      <br>Hora de inicio: {{c.hora_inicio_dia}}H
+      <br>Hora de finalización: {{c.hora_fin_dia}}H
+      </div>
+    </div>
+    <div class="container mt-3">
+      Alumnos:
+      <div *ngFor="let g of grupo">
+        <div *ngFor="let u of usuario">
+          <div *ngIf="g.id_usuario == u.id_usuario">
+            Nombre del alumno: {{u.nombre}}
+            <br>Apellidos del alumno: {{u.primer_apellido}}, {{u.segundo_apellido}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

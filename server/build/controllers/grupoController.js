@@ -55,9 +55,9 @@ class GrupoController {
             const id_usr = req.params.id_usr;
             const grupos = yield database_1.default.query('SELECT * FROM grupos WHERE id_usuario=?', [id_usr]);
             if (grupos.length > 0) {
-                return res.json(grupos[0]);
+                return res.json(grupos);
             }
-            res.json({ message: 'No hay grupos por usuario' });
+            res.status(404).json({ text: 'No se ha encontrado el grupo solicitado' });
         });
     }
     getGroupClass(req, res) {
@@ -65,9 +65,9 @@ class GrupoController {
             const id_clas = req.params.id_clas;
             const grupos = yield database_1.default.query('SELECT * FROM grupos WHERE id_clase=?', [id_clas]);
             if (grupos.length > 0) {
-                return res.json(grupos[0]);
+                return res.json(grupos);
             }
-            res.json({ message: 'No hay grupos por clase' });
+            res.status(404).json({ text: 'No se ha encontrado el grupo solicitado' });
         });
     }
 }

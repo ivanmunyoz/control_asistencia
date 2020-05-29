@@ -27,7 +27,7 @@ export class ClaseFormComponent implements OnInit {
   constructor(private clasesServices: ClasesService, private calendariosServices: CalendariosService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    const cal = this.getAllCalendarios();
+    this.getAllCalendarios();
     this.calendario;
     const params = this.activatedRoute.snapshot.params;
     if(params.id_clas){
@@ -45,9 +45,7 @@ export class ClaseFormComponent implements OnInit {
   }
 
   saveNewClase(){
-
     delete this.clase.id_clase;
-
     this.clasesServices.saveClase(this.clase)
     .subscribe(
       res => {
@@ -69,7 +67,7 @@ export class ClaseFormComponent implements OnInit {
   }
 
   getAllCalendarios(){
-    const prueba = this.calendariosServices.getCalendarios().subscribe(
+    this.calendariosServices.getCalendarios().subscribe(
       res=>{
         this.calendario = res;
       },

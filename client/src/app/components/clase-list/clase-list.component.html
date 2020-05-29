@@ -3,6 +3,9 @@
     <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
       {{clase.nombre}}
       <div>
+      <a [routerLink]  = "['/clases/', clase.id_clase, 'show']" class="btn btn-info mr-2">
+        <i class="fa fa-eye"></i>
+      </a>
       <button class="btn btn-danger float-right" (click)="deleteClase(clase.id_clase)">
         <i class="fa fa-trash-alt"></i>
       </button>
@@ -12,7 +15,7 @@
       </div>
     </div>
     <div class="card-body">
-      <p>{{clase.curso}}</p>
+      <p>{{clase.nombre}} {{clase.curso}}</p>
     </div>
   </div>
 </div>

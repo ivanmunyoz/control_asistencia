@@ -5,7 +5,7 @@
     </div>
     <div class="form-group">
       <select id="id_calendario" name="id_calendario" [(ngModel)]="clase.id_calendario">
-        <option value={{c.id_calendario}} *ngFor="let c of calendario">{{c.fecha_inicio}} - {{c.fecha_fin}}</option>
+        <option *ngFor="let c of calendario" value={{c.id_calendario}}>{{c.fecha_inicio}} - {{c.fecha_fin}}</option>
       </select>
     </div>
     <div class="form-group">
